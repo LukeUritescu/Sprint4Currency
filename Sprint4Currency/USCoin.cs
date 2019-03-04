@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    public abstract class USCoin
+    public abstract class USCoin : Coin
     {
         public USCoinMintMark MintMark;
         public string About()
@@ -25,11 +25,7 @@ namespace Sprint4Currency
             MintMark = mintMark;
         }
 
-        public string GetMintNameFromMark()
-        {
 
-            return "";
-        }
 
     }
 }

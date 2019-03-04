@@ -11,6 +11,7 @@ namespace Sprint4Currency
         public Penny()
         {
             MintMark = USCoinMintMark.D;
+            
         }
 
         public Penny(USCoinMintMark mintMark)

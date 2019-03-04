@@ -8,5 +8,15 @@ namespace Sprint4Currency
 {
     public class DollarCoin : USCoin
     {
+        public DollarCoin()
+        {
+            MintMark = USCoinMintMark.D;
+
+        }
+
+        public DollarCoin(USCoinMintMark mintMark)
+        {
+            MintMark = mintMark;
+        }
     }
 }
