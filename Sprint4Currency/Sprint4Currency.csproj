@@ -46,6 +46,7 @@
     <Compile Include="Coin.cs" />
     <Compile Include="CurrencyRepo.cs" />
     <Compile Include="Dime.cs" />
+    <Compile Include="DollarCoin.cs" />
     <Compile Include="IBankNote.cs" />
     <Compile Include="ICoin.cs" />
     <Compile Include="ICurrency.cs" />

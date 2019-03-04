@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    interface ICurrencyRepo
+    public interface ICurrencyRepo
     {
         List<ICoin> Coins { get; set; }
 

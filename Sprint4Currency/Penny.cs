@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    class Penny
+    public class Penny : USCoin
     {
+        public Penny()
+        {
+            MintMark = USCoinMintMark.D;
+        }
+
+        public Penny(USCoinMintMark mintMark)
+        {
+            MintMark = mintMark;
+        }
     }
 }

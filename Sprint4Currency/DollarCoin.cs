@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    public class Quarter : USCoin
+    public class DollarCoin : USCoin
     {
     }
 }

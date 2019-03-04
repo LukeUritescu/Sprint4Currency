@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    interface ICurrency
+    public interface ICurrency
     {
         double MonetaryValue { get; set; }
         string Name { get; set; }

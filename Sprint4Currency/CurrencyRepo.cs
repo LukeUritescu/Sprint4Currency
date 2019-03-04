@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    class CurrencyRepo : ICurrencyRepo
+    public class CurrencyRepo : ICurrencyRepo
     {
-        public List<ICoin> Coins { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public List<ICoin> Coins { get; set; }
 
         public string About()
         {
@@ -16,10 +16,17 @@ namespace Sprint4Currency
 
         public void AddCoin(ICoin c)
         {
+            Coins.Add(c);
         }
 
         public int GetCoinCount()
         {
+            int x = 0;
+            for(int i = 0; i < Coins.Count; i++)
+            {
+                x++;
+            }
+            return x;
         }
 
         public ICurrencyRepo MakeChange(double Amount)
@@ -36,6 +43,7 @@ namespace Sprint4Currency
 
         public double TotalValue()
         {
+
         }
     }
 }

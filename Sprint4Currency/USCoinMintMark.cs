@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    enum USCoinMintMark
+    public enum USCoinMintMark
     {
         P,
         D,

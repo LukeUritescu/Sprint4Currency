@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    interface IBankNote : ICurrency
+    public interface IBankNote : ICurrency
     {
         int Year { get; set; }
     }

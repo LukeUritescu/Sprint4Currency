@@ -6,20 +6,21 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    class Coin : ICoin
+    public abstract class Coin : ICoin
     {
-        public int Year { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public double MonetaryValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Year { get; set; }
+        public double MonetaryValue { get; set; }
+        public string Name { get; set; }
 
         public string About()
         {
-            throw new NotImplementedException();
+            return $"US {Name} is from {Year}. It is worth ${MonetaryValue}. It was made in Denver";
         }
 
         public Coin()
         {
-
+            Year = 2019;
+            
         }
     }
 }

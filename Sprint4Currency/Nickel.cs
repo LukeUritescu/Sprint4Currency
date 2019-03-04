@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint4Currency
 {
-    class Nickel
+    public class Nickel : USCoin
     {
     }
 }
