@@ -13,8 +13,8 @@ namespace Sprint4Currency
         string About();
         void AddCoin(ICoin c);
         int GetCoinCount();
-        //ICurrencyRepo MakeChange(double Amount);
-        //ICurrencyRepo MakeChange(double AmountTendered, double TotaCost);
+        ICurrencyRepo MakeChange(double Amount);
+        ICurrencyRepo MakeChange(double AmountTendered, double TotaCost);
         ICoin RemoveCoin(ICoin c);
         double TotalValue();
 

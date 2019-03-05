@@ -24,6 +24,7 @@ namespace Sprint4Currency
         public USCoin(USCoinMintMark mintMark)
         {
             this.MintMark = mintMark;
+            this.Year = System.DateTime.Now.Year;
         }
 
 

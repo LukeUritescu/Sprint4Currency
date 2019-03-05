@@ -60,7 +60,6 @@ namespace USCoinTests
             valueAfterDollar = repo.TotalValue();
 
 
-            //Assert
             Assert.AreEqual(coinCountOrig + 1, coinCountAfterPenny);
             Assert.AreEqual(coinCountAfterPenny + numPennies, coinCountAfterFiveMorePennies);
 
@@ -138,53 +137,53 @@ namespace USCoinTests
 
         }
 
-        //[TestMethod]
-        //public void MakeChangeTests()
-        //{
-        //    //Arrange
-        //    CurrencyRepo changeOneQuatersOnHalfDollar, changeTwoDollars, changeOneDollarOneHalfDoller,
-        //       changeOneDimeOnePenny, changeOneNickelOnePenny, changeFourPennies;
+        [TestMethod]
+        public void MakeChangeTests()
+        {
+            //Arrange
+            CurrencyRepo changeOneQuatersOnHalfDollar, changeTwoDollars, changeOneDollarOneHalfDoller,
+               changeOneDimeOnePenny, changeOneNickelOnePenny, changeFourPennies;
 
 
-        //    //Act
-        //    changeTwoDollars = (CurrencyRepo)CurrencyRepo.MakeChange(2.0);
-        //    changeOneDollarOneHalfDoller = CurrencyRepo.MakeChange(1.5);
-        //    changeOneQuatersOnHalfDollar = CurrencyRepo.MakeChange(.75);
+            //Act
+            changeTwoDollars = (CurrencyRepo)CurrencyRepo.MakeChange(2.0);
+            changeOneDollarOneHalfDoller = CurrencyRepo.MakeChange(1.5);
+            changeOneQuatersOnHalfDollar = CurrencyRepo.MakeChange(.75);
 
-        //    changeOneDimeOnePenny = USCurrencyRepo.CreateChange(.11);
-        //    changeOneNickelOnePenny = USCurrencyRepo.CreateChange(.06);
-        //    changeFourPennies = USCurrencyRepo.CreateChange(.04);
-
-
-        //    //Assert
-        //    Assert.AreEqual(changeTwoDollars.Coins.Count, 2);
-        //    Assert.AreEqual(changeTwoDollars.Coins[0].GetType(), new DollarCoin().GetType());
-        //    Assert.AreEqual(changeTwoDollars.Coins[1].GetType(), new DollarCoin().GetType());
-
-        //    //Assert.AreEqual(changeOneDollarOneHalfDoller.Coins.Count, 2);
-        //    //Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[0].GetType(), new DollarCoin().GetType());
-        //    ////Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[1].GetType(), new HalfDollar().GetType());
+            changeOneDimeOnePenny = CurrencyRepo.MakeChange(.11);
+            changeOneNickelOnePenny = CurrencyRepo.MakeChange(.06);
+            changeFourPennies = CurrencyRepo.MakeChange(.04);
 
 
-        //    //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins.Count, 2);
-        //    //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins[0].GetType(), new HalfDollar().GetType());
-        //    //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins[1].GetType(), new Quarter().GetType());
+            //Assert
+            Assert.AreEqual(changeTwoDollars.Coins.Count, 2);
+            Assert.AreEqual(changeTwoDollars.Coins[0].GetType(), new DollarCoin().GetType());
+            Assert.AreEqual(changeTwoDollars.Coins[1].GetType(), new DollarCoin().GetType());
 
-        //    Assert.AreEqual(changeOneDimeOnePenny.Coins.Count, 2);
-        //    Assert.AreEqual(changeOneDimeOnePenny.Coins[0].GetType(), new Dime().GetType());
-        //    Assert.AreEqual(changeOneDimeOnePenny.Coins[1].GetType(), new Penny().GetType());
-
-        //    Assert.AreEqual(changeOneNickelOnePenny.Coins.Count, 2);
-        //    Assert.AreEqual(changeOneNickelOnePenny.Coins[0].GetType(), new Nickel().GetType());
-        //    Assert.AreEqual(changeOneNickelOnePenny.Coins[1].GetType(), new Penny().GetType());
+            //Assert.AreEqual(changeOneDollarOneHalfDoller.Coins.Count, 2);
+            //Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[0].GetType(), new DollarCoin().GetType());
+            ////Assert.AreEqual(changeOneDollarOneHalfDoller.Coins[1].GetType(), new HalfDollar().GetType());
 
 
-        //    Assert.AreEqual(changeFourPennies.Coins.Count, 4);
-        //    Assert.AreEqual(changeFourPennies.Coins[0].GetType(), new Penny().GetType());
-        //    Assert.AreEqual(changeFourPennies.Coins[1].GetType(), new Penny().GetType());
-        //    Assert.AreEqual(changeFourPennies.Coins[2].GetType(), new Penny().GetType());
-        //    Assert.AreEqual(changeFourPennies.Coins[3].GetType(), new Penny().GetType());
+            //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins.Count, 2);
+            //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins[0].GetType(), new HalfDollar().GetType());
+            //Assert.AreEqual(changeOneQuatersOnHalfDollar.Coins[1].GetType(), new Quarter().GetType());
 
-        //}
-    }
+            Assert.AreEqual(changeOneDimeOnePenny.Coins.Count, 2);
+            Assert.AreEqual(changeOneDimeOnePenny.Coins[0].GetType(), new Dime().GetType());
+            Assert.AreEqual(changeOneDimeOnePenny.Coins[1].GetType(), new Penny().GetType());
+
+            Assert.AreEqual(changeOneNickelOnePenny.Coins.Count, 2);
+            Assert.AreEqual(changeOneNickelOnePenny.Coins[0].GetType(), new Nickel().GetType());
+            Assert.AreEqual(changeOneNickelOnePenny.Coins[1].GetType(), new Penny().GetType());
+
+
+            Assert.AreEqual(changeFourPennies.Coins.Count, 4);
+            Assert.AreEqual(changeFourPennies.Coins[0].GetType(), new Penny().GetType());
+            Assert.AreEqual(changeFourPennies.Coins[1].GetType(), new Penny().GetType());
+            Assert.AreEqual(changeFourPennies.Coins[2].GetType(), new Penny().GetType());
+            Assert.AreEqual(changeFourPennies.Coins[3].GetType(), new Penny().GetType());
+
+            }
+        }
 }

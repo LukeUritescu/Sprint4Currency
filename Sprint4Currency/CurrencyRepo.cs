@@ -17,28 +17,44 @@ namespace Sprint4Currency
 
         public void AddCoin(ICoin c)
         {
-            Coins.Add(c);
+                Coins.Add(c);
         }
 
         public int GetCoinCount()
         {
-            int x = 0;
-            for(int i = 0; i < Coins.Count; i++)
-            {
-                x++;
-            }
-            return x;
+                return Coins.Count;
         }
 
-        //public ICurrencyRepo MakeChange(double Amount)
-        //{
-            
-        //}
+        public CurrencyRepo()
+        {
+            Coins = new List<ICoin>();
+        }
 
-        //public ICurrencyRepo MakeChange(double AmountTendered, double TotaCost)
-        //{
-        //    return 
-        //}
+        public ICurrencyRepo MakeChange(double Amount)
+        {
+            DollarCoin dollarCoin = new DollarCoin();
+            Dime dime = new Dime();
+            Nickel nickel = new Nickel();
+            Penny penny = new Penny();
+            while (Amount > 0) {
+                if (Amount / dollarCoin.MonetaryValue > 0)
+                    AddCoin(dollarCoin);
+                else if (Amount / dime.MonetaryValue > 0)
+                    AddCoin(dime);
+                else if (Amount / nickel.MonetaryValue > 0)
+                    AddCoin(nickel);
+                else
+                    AddCoin(penny);
+
+
+                    }
+            return ;
+        }
+
+        public ICurrencyRepo MakeChange(double AmountTendered, double TotaCost)
+        {
+            return
+        }
 
         public ICoin RemoveCoin(ICoin c)
         {
