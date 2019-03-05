@@ -11,21 +11,42 @@ namespace Sprint4Currency
         public USCoinMintMark MintMark;
         public string About()
         {
-            return "";
+            return $"US {Name} is from {Year}. It is worth ${MonetaryValue}. It was made in Denver";
         }
 
         public USCoin()
         {
-            MintMark = USCoinMintMark.D;
+            this.Year = System.DateTime.Now.Year;
+            this.MintMark = USCoinMintMark.D;
             
         }
 
         public USCoin(USCoinMintMark mintMark)
         {
-            MintMark = mintMark;
+            this.MintMark = mintMark;
         }
 
 
+        public static string GetMintNameFromMark(USCoinMintMark m)
+        {
+            if(m == USCoinMintMark.D)
+            {
+                return "Denver";
+            }
 
+            else if (m == USCoinMintMark.P)
+            {
+                return "Philadelphia";
+            }
+
+            else if (m == USCoinMintMark.S)
+            {
+                return "San Francisco";
+            }
+            else
+            {
+                return "West Point";
+            }
+        }
     }
 }

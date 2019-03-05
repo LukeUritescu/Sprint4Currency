@@ -8,5 +8,20 @@ namespace Sprint4Currency
 {
     public class Nickel : USCoin
     {
+        public Nickel()
+        {
+            this.MintMark = USCoinMintMark.D;
+            this.Year = System.DateTime.Now.Year;
+            this.MonetaryValue = 0.05;
+            this.Name = "Nickel";
+
+        }
+
+        public Nickel(USCoinMintMark mintMark)
+        {
+            this.MintMark = mintMark;
+            this.Year = System.DateTime.Now.Year;
+            this.Name = "Nickel";
+        }
     }
 }

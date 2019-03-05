@@ -10,13 +10,18 @@ namespace Sprint4Currency
     {
         public Penny()
         {
-            MintMark = USCoinMintMark.D;
-            
+            this.MintMark = USCoinMintMark.D;
+            this.Year = System.DateTime.Now.Year;
+            this.MonetaryValue = 0.01;
+            this.Name = "Penny";
         }
 
         public Penny(USCoinMintMark mintMark)
         {
-            MintMark = mintMark;
+            this.MintMark = mintMark;
+            this.Year = System.DateTime.Now.Year;
+            this.MonetaryValue = 0.01;
+            this.Name = "Penny";
         }
     }
 }

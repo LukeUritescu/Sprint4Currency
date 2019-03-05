@@ -11,15 +11,15 @@ namespace Sprint4Currency
         public int Year { get; set; }
         public double MonetaryValue { get; set; }
         public string Name { get; set; }
-
-        public string About()
+        //System.DateTime.Now.Year
+        public virtual string About()
         {
             return $"US {Name} is from {Year}. It is worth ${MonetaryValue}. It was made in Denver";
         }
 
         public Coin()
         {
-            Year = 2019;
+            this.Year = 2019;
             
         }
     }

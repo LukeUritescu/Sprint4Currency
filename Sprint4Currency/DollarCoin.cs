@@ -10,13 +10,19 @@ namespace Sprint4Currency
     {
         public DollarCoin()
         {
-            MintMark = USCoinMintMark.D;
-
+            this.MintMark = USCoinMintMark.D;
+            this.Year = System.DateTime.Now.Year;
+            this.MonetaryValue = 1.00;
+            this.Name = "Dollar Coin";
         }
 
         public DollarCoin(USCoinMintMark mintMark)
         {
-            MintMark = mintMark;
+            this.MintMark = mintMark;
+            this.Year = System.DateTime.Now.Year;
+            this.MonetaryValue = 1.00;
+            this.Name = "Dollar Coin";
         }
     }
 }
+//sustem.date.time.yeare

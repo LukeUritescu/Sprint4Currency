@@ -43,7 +43,7 @@ namespace USCoinTests
 
             //Act 
             mintNameDenver = "Denver";
-            mintNamePhili = "Philadephia";
+            mintNamePhili = "Philadelphia";
             mintNameSanFran = "San Francisco";
             mintNameWestPoint = "West Point";
             D = Sprint4Currency.USCoinMintMark.D;
@@ -77,7 +77,7 @@ namespace USCoinTests
             //Act 
 
             //Assert
-            Assert.AreEqual("US Penny is from 2017. It is worth $0.01. It was made in Denver", p.About());
+            Assert.AreEqual("US Penny is from 2019. It is worth $0.01. It was made in Denver", p.About());
         }
     }
 }

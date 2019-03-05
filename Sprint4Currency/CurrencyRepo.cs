@@ -12,6 +12,7 @@ namespace Sprint4Currency
 
         public string About()
         {
+            return "";
         }
 
         public void AddCoin(ICoin c)
@@ -29,21 +30,31 @@ namespace Sprint4Currency
             return x;
         }
 
-        public ICurrencyRepo MakeChange(double Amount)
-        {
-        }
+        //public ICurrencyRepo MakeChange(double Amount)
+        //{
+            
+        //}
 
-        public ICurrencyRepo MakeChange(double AmountTendered, double TotaCost)
-        {
-        }
+        //public ICurrencyRepo MakeChange(double AmountTendered, double TotaCost)
+        //{
+        //    return 
+        //}
 
         public ICoin RemoveCoin(ICoin c)
         {
+            ICoin removedCoin = c;
+            Coins.Remove(c);
+            return removedCoin;
         }
 
         public double TotalValue()
         {
-
+            double frank = 0;
+            for(int i = 0; i < GetCoinCount(); i++)
+            {
+                frank = frank + Coins[i].MonetaryValue;
+            }
+            return frank;
         }
     }
 }
