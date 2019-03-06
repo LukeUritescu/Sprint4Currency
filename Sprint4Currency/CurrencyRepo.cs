@@ -17,12 +17,12 @@ namespace Sprint4Currency
 
         public void AddCoin(ICoin c)
         {
-                Coins.Add(c);
+              Coins.Add(c);
         }
 
         public int GetCoinCount()
         {
-                return Coins.Count;
+              return Coins.Count;
         }
 
         public CurrencyRepo()
@@ -33,28 +33,58 @@ namespace Sprint4Currency
         public ICurrencyRepo MakeChange(double Amount)
         {
             DollarCoin dollarCoin = new DollarCoin();
+            HalfDollar halfDollar = new HalfDollar();
+            Quarter quarter = new Quarter();
             Dime dime = new Dime();
             Nickel nickel = new Nickel();
             Penny penny = new Penny();
+            CurrencyRepo cr = new CurrencyRepo();
             while (Amount > 0) {
-                if (Amount / dollarCoin.MonetaryValue > 0)
-                    AddCoin(dollarCoin);
-                else if (Amount / dime.MonetaryValue > 0)
-                    AddCoin(dime);
-                else if (Amount / nickel.MonetaryValue > 0)
-                    AddCoin(nickel);
+                if (Math.Round(Amount, 2) - Math.Round(dollarCoin.MonetaryValue, 2) >= 0)
+                {
+                    Amount = Math.Round(Amount, 2) - Math.Round(dollarCoin.MonetaryValue, 2);
+                    cr.AddCoin(dollarCoin);
+                }
+
+                else if (Math.Round(Amount, 2) - Math.Round(halfDollar.MonetaryValue, 2) >= 0)
+                {
+                    Amount = Math.Round(Amount, 2) - Math.Round(halfDollar.MonetaryValue, 2);
+                    cr.AddCoin(halfDollar);
+                }
+
+                else if (Math.Round(Amount, 2) - Math.Round(quarter.MonetaryValue, 2) >= 0)
+                {
+                    Amount = Math.Round(Amount, 2) - Math.Round(quarter.MonetaryValue, 2);
+                    cr.AddCoin(quarter);
+                }
+
+                else if (Math.Round(Amount, 2) - Math.Round(dime.MonetaryValue, 2) >= 0)
+                {
+                    Amount = Math.Round(Amount, 2) - Math.Round(dime.MonetaryValue, 2);
+                    cr.AddCoin(dime);
+                }
+                else if (Math.Round(Amount, 2) - Math.Round(nickel.MonetaryValue, 2) >= 0)
+                {
+                    Amount = Math.Round(Amount, 2) - Math.Round(nickel.MonetaryValue, 2);
+                    cr.AddCoin(nickel);
+                }
+                else if (Math.Round(Amount, 2) - Math.Round(penny.MonetaryValue, 2) >= 0)
+                {
+                    Amount = Math.Round(Amount, 2) - Math.Round(penny.MonetaryValue, 2);
+                    cr.AddCoin(penny);
+                }
                 else
-                    AddCoin(penny);
+                    Amount = 0;
 
 
                     }
-            return ;
+            return cr;
         }
 
-        public ICurrencyRepo MakeChange(double AmountTendered, double TotaCost)
-        {
-            return
-        }
+        //public ICurrencyRepo MakeChange(double AmountTendered, double TotaCost)
+        //{
+        //    return
+        //}
 
         public ICoin RemoveCoin(ICoin c)
         {
